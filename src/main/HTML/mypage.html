@@ -1,0 +1,158 @@
+// Creating a form and submitting it
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+    <title>Form</title>
+</head>
+<body>
+<div class="container mt-5 p-5">
+    <h1>Form Submission with Selenium</h1>
+    <form class="row g-7" id="myForm" onsubmit="submitForm(event)">
+        <div class="col-8">
+            <br />
+
+            <div class="mb-3 row">
+                <label for="FirstName" class="col-sm-2 col-form-label"
+                >FirstName</label
+                >
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="FirstName" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="FirstName" class="col-sm-2 col-form-label"
+                >FirstName</label
+                >
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="FirstName" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="FirstName" class="col-sm-2 col-form-label"
+                >FirstName</label
+                >
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="FirstName1" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="FirstName" class="col-sm-2 col-form-label"
+                >FirstName</label
+                >
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="FirstName2" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="FirstName" class="col-sm-2 col-form-label"
+                >FirstName</label
+                >
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="FirstName3" />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="FirstName" class="col-sm-2 col-form-label"
+                >FirstName</label
+                >
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="FirstName4" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="DOB" class="col-sm-2 col-form-label">DOB</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="DOB" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="Email" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="inputNumber" class="col-sm-2 col-form-label"
+                >Number</label
+                >
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="inputNumber" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label" for="Gender">Gender</label>
+                <div class="form-check col-sm-2">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="Gender"
+                            id="Male"
+                            value="Male"
+                    />
+                    <label class="form-check-label" for="Male">Male</label>
+                </div>
+                <div class="form-check col-sm-2">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="Gender"
+                            id="Female"
+                            value="Female"
+                    />
+                    <label class="form-check-label" for="Female">Female</label>
+                </div>
+            </div>
+
+            <button class="btn btn-info col-sm-2" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function submitForm(event) {
+      // Prevent the form from actually submitting
+      event.preventDefault();
+
+      // Extract form data
+      const firstName = document.getElementById("FirstName").value;
+      const dob = document.getElementById("DOB").value;
+      const email = document.getElementById("Email").value;
+      const number = document.getElementById("inputNumber").value;
+      const gender = document.querySelector(
+        'input[name="Gender"]:checked'
+      ).value;
+
+      if (!/^\d{10}$/.test(number)) {
+        alert("Error");
+        return;
+      }
+
+      // Create a message with the form data
+      const message = `First Name: ${firstName}\nDOB: ${dob}\nEmail: ${email}\nNumber: ${number}\nGender: ${gender}`;
+
+      // Display an alert with the form data
+      alert(message);
+
+      document.getElementById("FirstName").value = "";
+      document.getElementById("DOB").value = "";
+      document.getElementById("Email").value = "";
+      document.getElementById("inputNumber").value = "";
+      document.querySelector('input[name="Gender"]:checked').checked = false;
+    }
+</script>
+</body>
+</html>
