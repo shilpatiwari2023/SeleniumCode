@@ -12,6 +12,6 @@ public class Link_Click {
         //driver.findElement(By.linkText(" Products")).click();
         driver.findElement(By.partialLinkText("Cases")).click();
 
-        driver.quit();
+        //driver.quit();
     }
 }
