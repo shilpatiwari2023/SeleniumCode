@@ -59,11 +59,6 @@ public class RegisterUser {
         String verifyaccount_delete = driver.findElement(By.xpath("//b[text()=\"Account Deleted!\"]")).getText();
         Assert.assertEquals(verifyaccount_delete, "ACCOUNT DELETED!");
         driver.findElement(By.xpath("//a[@class= \"btn btn-primary\"]")).click();
-
-
-
-
-
-
+        driver.quit();
     }
 }
