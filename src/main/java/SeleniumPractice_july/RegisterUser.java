@@ -11,6 +11,7 @@ public class RegisterUser {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
         driver.get("https://automationexercise.com/");
+        driver.manage().window().maximize();
         String homepageTitle = driver.getTitle();
         System.out.println("Title of home page is : " + homepageTitle);
         Assert.assertEquals(homepageTitle,"Automation Exercise");
