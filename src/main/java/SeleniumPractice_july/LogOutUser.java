@@ -27,7 +27,7 @@ public class LogOutUser {
         driver.findElement(By.linkText("Logout")).click();
         String homepageTitle1 = driver.getTitle();
         System.out.println("Title of home page is : " + homepageTitle1);
-        Assert.assertEquals(homepageTitle1, "Automation Exercise");
+        Assert.assertEquals(homepageTitle1, "Automation Exercise - Signup / Login");
         driver.quit();
     }
 }
