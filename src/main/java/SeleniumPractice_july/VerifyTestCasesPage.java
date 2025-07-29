@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 public class VerifyTestCasesPage {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://automationexercise.com/");
         driver.manage().window().maximize();
@@ -17,6 +17,7 @@ public class VerifyTestCasesPage {
         String textOnClickTestCase = driver.findElement(By.xpath("//b[text()='Test Cases']")).getText();
         System.out.println("Text on clicking Test cases : " + textOnClickTestCase);
         Assert.assertEquals(textOnClickTestCase, "TEST CASES");
+        Thread.sleep(5000);
         driver.quit();
     }
 }
