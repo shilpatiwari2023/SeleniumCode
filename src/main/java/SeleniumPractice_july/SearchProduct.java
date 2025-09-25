@@ -31,7 +31,8 @@ public class SearchProduct {
         Thread.sleep(10000);
         // Verify each product title contains the search keyword
         for (WebElement product : products) {
-            String title = product.getText().toLowerCase();        Assert.assertEquals(textOnSearch, "SEARCHED PRODUCTS");
+            String title = product.getText().toLowerCase();
+            Assert.assertEquals(textOnSearch, "SEARCHED PRODUCTS");
             //  Get list of product titles
 
             System.out.println("Product Title: " + title);
